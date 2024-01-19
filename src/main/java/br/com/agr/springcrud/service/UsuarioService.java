@@ -48,7 +48,7 @@ public class UsuarioService {
 
 	public String deleteUsuario(Long id) {
 		return repository.findById(id).map(usu -> {
-			repository.save(usu);
+			repository.delete(usu);
 			return "Usuario deletado com sucesso";
 		}).orElse("Usuario inexistente");
 	}
@@ -66,5 +66,7 @@ public class UsuarioService {
 	}
 	
 	
+	
+
 
 }
